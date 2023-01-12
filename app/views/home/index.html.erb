@@ -4,9 +4,15 @@ All: <%= @all['count'] %>
 
 
 <h2><%= @pokemon['name'].capitalize %></h2>
+<h3><%= @pokemon['id'] %>
 
----
-<img src=<%= @pokemon["sprites"]["front_default"]%>>
----
-<img src=<%= @pokemon["sprites"]["other"]["official-artwork"]["front_default"]%>>
+<h3>Type:</h3>
+<% @pokemon['types'].each do |type| %>
+<ul><%= type['type']['name'].capitalize %></ul>
+<% end %>
+
+<p>---</p>
+<p><img src=<%= @pokemon["sprites"]["front_default"]%>></p>
+<p>---</p>
+<p><img src=<%= @pokemon["sprites"]["other"]["official-artwork"]["front_default"]%>></p>
 
