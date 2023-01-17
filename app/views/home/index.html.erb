@@ -15,4 +15,17 @@ All: <%= @all['count'] %>
 <p><img src=<%= @pokemon["sprites"]["front_default"]%>></p>
 <p>---</p>
 <p><img src=<%= @pokemon["sprites"]["other"]["official-artwork"]["front_default"]%>></p>
+<p>---</p>
+<h3>Status</h3>
 
+<% @pokemon['stats'].each do |stat| %>
+<ul><%= stat['stat']['name'].capitalize %>: <%= stat['base_stat'] %></ul>
+<% end %>
+
+<p>---</p>
+
+
+<h3>Lista de habilidades</h3>
+<% @pokemon['moves'].each do |move| %>
+<ul><%= move['move']['name'].capitalize %></ul>
+<% end %>
